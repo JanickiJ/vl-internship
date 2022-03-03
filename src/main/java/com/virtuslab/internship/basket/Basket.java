@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Basket {
 
-    private List<Product> products;
+    private final List<Product> products;
 
     public Basket() {
         products = new ArrayList<>();

@@ -2,13 +2,19 @@ package com.virtuslab.internship.receipt;
 
 import com.virtuslab.internship.basket.Basket;
 import com.virtuslab.internship.product.Product;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class ReceiptGenerator {
+@NoArgsConstructor
+@Service
+public class ReceiptService {
 
     public Receipt generate(Basket basket) {
         return getReceipt(basket);

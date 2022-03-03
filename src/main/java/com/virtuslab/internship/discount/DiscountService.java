@@ -3,17 +3,17 @@ package com.virtuslab.internship.discount;
 import com.virtuslab.internship.discount.discounts.FifteenPercentDiscount;
 import com.virtuslab.internship.discount.discounts.TenPercentDiscount;
 import com.virtuslab.internship.receipt.Receipt;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@RequiredArgsConstructor
+@Service
 public class DiscountService {
-    private final List<Discount> discounts;
+    private static final List<Discount> discounts = List.of(new FifteenPercentDiscount(), new TenPercentDiscount());
 
-    public DiscountService() {
-        discounts = List.of(new FifteenPercentDiscount(), new TenPercentDiscount());
-    }
-
-    public Receipt apply(Receipt receipt){
+    public Receipt applyDiscounts(Receipt receipt){
         for (Discount discount: discounts) {
             receipt = discount.apply(receipt);
         }

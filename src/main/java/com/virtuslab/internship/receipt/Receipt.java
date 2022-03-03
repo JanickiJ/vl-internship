@@ -1,6 +1,10 @@
 package com.virtuslab.internship.receipt;
 
 import com.virtuslab.internship.discount.Discount;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import org.springframework.boot.jackson.JsonComponent;
+import org.springframework.context.annotation.Bean;
 
 import java.math.BigDecimal;
 import java.util.LinkedList;
