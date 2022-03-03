@@ -4,8 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.virtuslab.internship.discount.Discount;
 import com.virtuslab.internship.receipt.Receipt;
 import org.springframework.boot.jackson.JsonComponent;
+import org.springframework.context.annotation.Bean;
 
 import java.math.BigDecimal;
+
 
 @JsonComponent
 public class TenPercentDiscount extends Discount {
