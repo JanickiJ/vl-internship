@@ -4,9 +4,7 @@ import com.virtuslab.internship.discount.discounts.FifteenPercentDiscount;
 import com.virtuslab.internship.product.ProductDb;
 import com.virtuslab.internship.receipt.Receipt;
 import com.virtuslab.internship.receipt.ReceiptEntry;
-import lombok.AllArgsConstructor;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

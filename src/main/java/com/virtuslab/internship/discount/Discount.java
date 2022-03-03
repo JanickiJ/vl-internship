@@ -1,6 +1,5 @@
 package com.virtuslab.internship.discount;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.virtuslab.internship.receipt.Receipt;
 
 import java.math.BigDecimal;
@@ -18,6 +17,8 @@ public abstract class Discount {
     }
 
     protected abstract boolean shouldApply(Receipt receipt);
+
     protected abstract BigDecimal getPercent();
+
     protected abstract String getName();
 }

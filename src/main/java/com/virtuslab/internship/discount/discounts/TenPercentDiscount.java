@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.virtuslab.internship.discount.Discount;
 import com.virtuslab.internship.receipt.Receipt;
 import org.springframework.boot.jackson.JsonComponent;
-import org.springframework.context.annotation.Bean;
 
 import java.math.BigDecimal;
 
@@ -19,14 +18,14 @@ public class TenPercentDiscount extends Discount {
         return receipt.totalPrice().compareTo(BigDecimal.valueOf(50)) >= 0;
     }
 
-    @Override
     @JsonProperty
+    @Override
     protected BigDecimal getPercent() {
         return percent;
     }
 
-    @Override
     @JsonProperty
+    @Override
     public String getName() {
         return NAME;
     }

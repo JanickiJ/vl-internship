@@ -2,9 +2,7 @@ package com.virtuslab.internship.receipt;
 
 import com.virtuslab.internship.basket.Basket;
 import com.virtuslab.internship.product.Product;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -26,9 +24,11 @@ public class ReceiptService {
             Integer productQuantity = productQuantities.get(product);
             productQuantities.put(product, productQuantity == null ? 1 : productQuantity + 1);
         });
-        List<ReceiptEntry> receiptEntries = productQuantities.entrySet().stream().map(entry ->
-                new ReceiptEntry(entry.getKey(), entry.getValue())
-        ).collect(Collectors.toList());
+
+        List<ReceiptEntry> receiptEntries = productQuantities
+                .entrySet().stream()
+                .map(entry -> new ReceiptEntry(entry.getKey(), entry.getValue()))
+                .collect(Collectors.toList());
         return new Receipt(receiptEntries);
     }
 }
